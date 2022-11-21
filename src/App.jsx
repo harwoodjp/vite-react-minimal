@@ -16,6 +16,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <p>data: <i>{this.props.data}</i></p>
         <p>Clicked {this.state.count} times</p>
         <button onClick={() => this.countHandler()}>
           Click me
