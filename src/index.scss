@@ -1,12 +1,9 @@
-@mixin flex($direction) {
-  display: flex;
-  flex-direction: $direction;
-}
-
 .column {
-  @include flex(column);
+  display: flex;
+  flex-direction: column;
 }
 
 .row {
-  @include flex(row);
+  display: flex;
+  flex-direction: row;
 }
