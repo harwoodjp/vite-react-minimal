@@ -1,29 +1,19 @@
-import { Component } from 'react'
-import './App.css'
+import { useState, useEffect } from "react"
+import "./App.css"
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: 0 }
-  }
-
-  countHandler() {
-    this.setState({
-      count: this.state.count + 1
-    })
-  }
-
-  render() {
-    return (
+const App = props => {
+  const [count, setCount] = useState(props["start"])
+  useEffect(() => {
+    document.title = `${count}`
+  })  
+  return (
       <div>
-        <p>data: <i>{this.props.data}</i></p>
-        <p>Clicked {this.state.count} times</p>
-        <button onClick={() => this.countHandler()}>
+        <p>Clicked {count} times</p>
+        <button onClick={() => setCount((count) => count + 1)}>
           Click me
         </button>
       </div>
-    );
-  }
+  )
 
 }
 

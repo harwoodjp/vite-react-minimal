@@ -1,21 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
+import React from "react"
+import ReactDOM from "react-dom/client"
+import App from "./App"
 import {
   createBrowserRouter,
   RouterProvider,
   Route,
 } from "react-router-dom"
-import './index.css'
+import "./index.css"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App data="/" />,
+    element: <App start={0} />,
   },
   {
     path: "/other",
-    element: <App data="/other" />
+    element: <App start={5} />
   }
 ])
 
