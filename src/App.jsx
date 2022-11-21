@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react"
-import "./App.css"
+import { useParams } from "react-router-dom"
 
-const App = props => {
-  const [count, setCount] = useState(props["start"])
+const App = (props) => {
+  const start = parseInt(useParams()["start"]) || 0
+  const [count, setCount] = useState(start)
   useEffect(() => {
     document.title = `${count}`
-  })  
+  })
   return (
-      <div>
-        <p>Clicked {count} times</p>
-        <button onClick={() => setCount((count) => count + 1)}>
-          Click me
-        </button>
-      </div>
+    <div>
+      <button onClick={() => setCount((count) => count + 1)}>Click me</button>
+      <span> {count}</span>
+    </div>
   )
-
 }
 
 export default App
